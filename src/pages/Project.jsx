@@ -5,7 +5,7 @@ import project3 from '../data/images/project-image-03.jpg'
 import project4 from '../data/images/project-image-04.jpg'
 import project5 from '../data/images/project-image-05.jpg'
 // import { projectData } from '../data/Data' 
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 
 function Project() {
 
@@ -82,7 +82,7 @@ function Project() {
             onMouseOut={(hover) => hover.currentTarget.style.transform = "scale(1)"}
             onClick={() => window.open(cert.link, "_blank")}
           >
-            <img src={cert.img} alt={cert.id} style={img} />
+            <img src={cert.img} alt={profile} style={img} />
             <h5 style={title}>{cert.title}</h5>
             <p style={text}>{cert.discription}</p>
           </div>
