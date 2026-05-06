@@ -85,7 +85,7 @@ function Home() {
         </button>
       </div>
       <div style={imageBox}>
-        <img src={mainpicture} alt="main picture" style={imgStyle} />
+        <img src={mainpicture} alt="project preview" style={imgStyle} />
       </div>
 
     </div>

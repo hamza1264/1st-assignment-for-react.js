@@ -82,7 +82,7 @@ function Project() {
             onMouseOut={(hover) => hover.currentTarget.style.transform = "scale(1)"}
             onClick={() => window.open(cert.link, "_blank")}
           >
-            <img src={cert.img} alt="project image"  style={img} />
+            <img src={cert.img} alt="image"  style={img} />
             <h5 style={title}>{cert.title}</h5>
             <p style={text}>{cert.discription}</p>
           </div>
