@@ -1,8 +1,24 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { NavLink } from 'react-router-dom'
 import './Navbar.css'
+import { ThemeContext } from "./ThemeContext";
+
+
 
 function Navbar() {
+
+    const { theme, changeTheme } = useContext(ThemeContext);
+
+    const buttonStyle = {
+        backgroundColor: theme === "light" ? "#000" : "#fff",
+        color: theme === "light" ? "#fff" : "#000",
+        padding: "10px 25px",
+        border: "none",
+        cursor: "pointer",
+        borderRadius: "5px",
+
+    };
+
     return (
         <div>
             <nav>
@@ -20,14 +36,16 @@ function Navbar() {
                     <NavLink to="/skills">
                         Skills
                     </NavLink>
-                    <NavLink to="/certificate"> 
+                    <NavLink to="/certificate">
                         Certificate
                     </NavLink>
                     <NavLink to="/project">
                         Project
                     </NavLink>
                 </div>
-
+                <button onClick={changeTheme} style={buttonStyle}>
+                    {theme === "light" ? "Dark Mode 🌙" : "Light Mode 🌞"}
+                </button>
             </nav>
         </div>
     )

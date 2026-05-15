@@ -1,18 +1,10 @@
 import React from 'react'
 import mainpicture from '../data/images/main-picture.jpeg'
+import { useContext } from "react";
+import { ThemeContext } from "../components/ThemeContext";
 
 
 function Home() {
-
-  const containerStyle = {
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-    padding: "50px",
-    flexWrap: "wrap",
-    backgroundColor: "whiteSmoke",
-    // border: "2px solid black",
-  };
 
   const textBox = {
     flex: "1",
@@ -38,7 +30,8 @@ function Home() {
 
   const heading1 = {
     fontSize: "40px",
-    marginBottom: "10px"
+    marginBottom: "10px",
+    color: "rgb(33, 33, 68)",
   };
 
   const heading2 = {
@@ -64,12 +57,22 @@ function Home() {
     backgroundColor: "rgb(33, 33, 68)",
     color: "white",
     fontSize: "14px",
-    textTransform : "capitalize",
+    textTransform: "capitalize",
   };
 
+  const { theme } = useContext(ThemeContext);
 
   return (
-    <div style={containerStyle}>
+    <div style={{
+      backgroundColor: theme === "light" ? "#ffffff" : "#3a3b3b",
+      color: theme === "light" ? "#3a3b3b" : "#ffffff",
+      display: "flex",
+      justifyContent: "space-between",
+      alignItems: "center",
+      padding: "50px",
+      flexWrap: "wrap",
+    }}
+    >
 
       <div style={textBox}>
         <h1 style={heading1}>Hi, I am Hamza Ansari </h1>

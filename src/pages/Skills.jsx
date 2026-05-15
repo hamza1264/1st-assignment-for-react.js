@@ -8,6 +8,8 @@ import git from '../data/images/git-logo.png'
 import firebase from '../data/images/firebase-logo.png'
 import typescript from '../data/images/typescript-logo.jpeg'
 import react from '../data/images/react-logo.png'
+import { useContext } from "react";
+import { ThemeContext } from "../components/ThemeContext"; 
 
 function Skills() {
 
@@ -15,7 +17,7 @@ function Skills() {
     backgroundColor: "whiteSmoke",
     padding: "50px 20px",
     textAlign: "center",
-    fontFamily: "Arial, sans-serif"
+    fontFamily: "Arial, sans-serif",
   };
 
   const heading = {
@@ -46,7 +48,8 @@ function Skills() {
     alignItems: "center",
     justifyContent: "center",
     cursor: "pointer",
-    transition: "0.3s"
+    transition: "0.3s",
+    marginBottom: "30px"
   };
 
   const img = {
@@ -72,8 +75,13 @@ function Skills() {
     { name: "React", img: react }
   ];
 
+  const { theme } = useContext(ThemeContext);
+
   return (
-    <div style={container}>
+    <div style={container} style={{
+      backgroundColor: theme === "light" ? "#ffffff" : "#3a3b3b",
+      color: theme === "light" ? "#3a3b3b" : "#ffffff",
+    }}>
       <h1 style={heading}>skills:</h1>
 
       <div style={grid}>

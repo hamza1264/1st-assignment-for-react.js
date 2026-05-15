@@ -1,8 +1,22 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import './Footer.css'
+import { ThemeContext } from "./ThemeContext";
+import { useContext } from 'react';
 
 function Footer() {
+
+    const { theme, changeTheme } = useContext(ThemeContext);
+
+    const buttonStyle = {
+        backgroundColor: theme === "light" ? "#000" : "#fff",
+        color: theme === "light" ? "#fff" : "#000",
+        padding: "10px 15px",
+        border: "none",
+        cursor: "pointer",
+        borderRadius: "5px"
+    };
+
     return (
         <div>
             <footer className="footer">
@@ -30,6 +44,9 @@ function Footer() {
                             Project
                         </NavLink>
                     </div>
+                    <button onClick={changeTheme} style={buttonStyle}>
+                        {theme === "light" ? "Dark Mode 🌙" : "Light Mode 🌞"}
+                    </button>
                 </div>
             </footer>
         </div>

@@ -1,10 +1,12 @@
 import React from 'react'
+import { useContext } from "react";
+import { ThemeContext } from "../components/ThemeContext";
 
 function About() {
 
 
   const container = {
-    padding: "40px",
+    // padding: "40px",
     backgroundColor: "whiteSmoke",
     fontFamily: "Arial, sans-serif"
   };
@@ -55,12 +57,19 @@ function About() {
     fontWeight: "700",
   };
 
-  return (
-    <div style={container}>
-      <h1 style={heading}>About:</h1>
-      <div style={flex}>
+  const { theme } = useContext(ThemeContext);
 
-        <div style={card}>
+  return (
+    <div style={container} style ={{
+      backgroundColor: theme === "light" ? "#ffffff" : "#3a3b3b",
+      color: theme === "light" ? "#3a3b3b" : "#ffffff",
+      
+
+    }}>
+      <h1 style={heading}>About:</h1>
+      <div style={flex} >
+
+        <div style={card} >
           <h2 style={title}>
             who i am:
           </h2>

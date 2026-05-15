@@ -4,6 +4,8 @@ import css from '../data/images/css-cartificate.jpg'
 import javascript1 from '../data/images/javascript-cartificate-01.jpg'
 import javascript2 from '../data/images/javascript-cartificate-02.jpg'
 import { Link } from 'react-router-dom';
+import { useContext } from "react";
+import { ThemeContext } from "../components/ThemeContext";
 
 
 function Cartificate() {
@@ -32,11 +34,12 @@ function Cartificate() {
   const card = {
     width: "320px",
     backgroundColor: "#fff",
-    padding: "20px",
+    padding: "30px",
     borderRadius: "10px",
     boxShadow: "0 5px 12px rgba(0,0,0,0.6)",
     transition: "0.3s",
-    cursor: "pointer"
+    cursor: "pointer",
+    marginBottom: "30px"
   };
 
   const img = {
@@ -48,6 +51,8 @@ function Cartificate() {
   const text = {
     fontWeight: "900",
     color: "rgb(33, 33, 68)",
+    textAlign: "center",
+    fontSize: "20px",
   };
 
   const certificates = [
@@ -57,8 +62,13 @@ function Cartificate() {
     { id: 4, title: "JavaScript2", img: javascript2 }
   ];
 
+  const { theme } = useContext(ThemeContext);
+
   return (
-    <div style={container}>
+    <div style={container} style={{
+      backgroundColor: theme === "light" ? "#ffffff" : "#3a3b3b",
+      color: theme === "light" ? "#3a3b3b" : "#ffffff",
+    }}>
       <h1 style={heading}>Certificates:</h1>
 
       <div style={grid}>

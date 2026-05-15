@@ -4,8 +4,8 @@ import project2 from '../data/images/project-image-02.jpg'
 import project3 from '../data/images/project-image-03.jpg'
 import project4 from '../data/images/project-image-04.jpg'
 import project5 from '../data/images/project-image-05.jpg'
-// import { projectData } from '../data/Data' 
-// import { Link } from 'react-router-dom'
+import { useContext } from "react";
+import { ThemeContext } from "../components/ThemeContext";
 
 function Project() {
 
@@ -69,10 +69,14 @@ function Project() {
     { id: 5, title: "Online Grocery Platform Demo (FreshBasket)", discription: "FreshBasket is an online grocery platform I developed using HTML, CSS, Bootstrap, and JavaScript, focused on responsive design and a smooth user experience. I handled front-end development, including layout structuring, styling, and interactive features such as product listings, search functionality, and a cart system, creating a user-friendly and visually appealing shopping experience.", link:"https://hamza1264.github.io/2nd-assignment-freshbasket-for-firebase/", img: project5 },
   ];
 
-  return (
-    <div style={container}>
-      <h1 style={heading}>project:</h1>
+  const { theme } = useContext(ThemeContext); 
 
+  return (
+    <div style={container} style={{
+      backgroundColor: theme === "light" ? "#ffffff" : "#3a3b3b",
+      color: theme === "light" ? "#3a3b3b" : "#ffffff",
+    }}>
+      <h1 style={heading}>project:</h1>
       <div style={grid}>
         {project.map((cert, index) => (
           <div
