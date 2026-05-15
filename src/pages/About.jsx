@@ -6,7 +6,7 @@ function About() {
 
 
   const container = {
-    // padding: "40px",
+    padding: "40px",
     backgroundColor: "whiteSmoke",
     fontFamily: "Arial, sans-serif"
   };
@@ -60,12 +60,11 @@ function About() {
   const { theme } = useContext(ThemeContext);
 
   return (
-    <div style={container} style ={{
-      backgroundColor: theme === "light" ? "#ffffff" : "#3a3b3b",
-      color: theme === "light" ? "#3a3b3b" : "#ffffff",
-      
-
-    }}>
+    <div  style={{
+    ...container,
+    backgroundColor: theme === "light" ? "#ffffff" : "#3a3b3b",
+    color: theme === "light" ? "#3a3b3b" : "#ffffff",
+  }}>
       <h1 style={heading}>About:</h1>
       <div style={flex} >
 

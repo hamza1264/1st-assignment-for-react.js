@@ -65,7 +65,8 @@ function Cartificate() {
   const { theme } = useContext(ThemeContext);
 
   return (
-    <div style={container} style={{
+    <div style={{
+      ...container,
       backgroundColor: theme === "light" ? "#ffffff" : "#3a3b3b",
       color: theme === "light" ? "#3a3b3b" : "#ffffff",
     }}>

@@ -91,7 +91,8 @@ function CartificateVisit() {
   };
 
   return (
-    <div style={styles.container} style={{
+    <div style={{
+      ...styles.container,
       backgroundColor: theme === "light" ? "#ffffff" : "#3a3b3b",
       color: theme === "light" ? "#3a3b3b" : "#ffffff",
     }}>

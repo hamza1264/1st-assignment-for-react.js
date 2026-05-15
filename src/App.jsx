@@ -1,4 +1,4 @@
-import { Component } from "react";
+// import { Component } from "react";
 import Routing from "./route/Routing";
 
 function App() {
@@ -6,7 +6,6 @@ function App() {
   return (
     <div>
       <Routing />
-
     </div>
   );
 }

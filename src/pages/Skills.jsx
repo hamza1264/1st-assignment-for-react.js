@@ -78,10 +78,11 @@ function Skills() {
   const { theme } = useContext(ThemeContext);
 
   return (
-    <div style={container} style={{
-      backgroundColor: theme === "light" ? "#ffffff" : "#3a3b3b",
-      color: theme === "light" ? "#3a3b3b" : "#ffffff",
-    }}>
+    <div  style={{
+    ...container,
+    backgroundColor: theme === "light" ? "#ffffff" : "#3a3b3b",
+    color: theme === "light" ? "#3a3b3b" : "#ffffff",
+  }}>
       <h1 style={heading}>skills:</h1>
 
       <div style={grid}>
