@@ -2,8 +2,13 @@ import React from 'react'
 import { useParams } from 'react-router-dom'
 import CartificateData from '../data/Data'
 import NotFoundPage from './NotFoundPage';
+import { useContext } from "react";
+import { ThemeContext } from "../components/ThemeContext";
 
 function CartificateVisit() {
+
+
+  const { theme } = useContext(ThemeContext);
 
   // const cartificate = CartificateData[0]
   const { id } = useParams();
@@ -17,7 +22,6 @@ function CartificateVisit() {
       <NotFoundPage />
     );
   }
-
 
   const styles = {
     container: {
@@ -39,7 +43,8 @@ function CartificateVisit() {
       boxShadow: "0 10px 25px rgba(0,0,0,0.2)",
       maxWidth: "900px",
       width: "100%",
-      flexWrap: "wrap"
+      flexWrap: "wrap",
+      margin: "20px auto"
     },
 
     left: {
@@ -86,7 +91,10 @@ function CartificateVisit() {
   };
 
   return (
-    <div style={styles.container}>
+    <div style={styles.container} style={{
+      backgroundColor: theme === "light" ? "#ffffff" : "#3a3b3b",
+      color: theme === "light" ? "#3a3b3b" : "#ffffff",
+    }}>
 
       <div style={styles.card}>
 
