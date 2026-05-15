@@ -14,7 +14,6 @@ function ThemeProvider({ children }) {
         }
     }
 
-
     return (
         <ThemeContext.Provider value={{ theme, changeTheme }}>
             {children}
